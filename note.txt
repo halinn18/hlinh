@@ -1,0 +1,54 @@
+WHAT IS INTERNET
+
+Internet
+
+Inter: among, between.
+Net: network
+-> hệ thống các mạng kết nối với nhau.
+
+ISO - OSI
+
+- Application: cung cấp giao diện để tương tác (vd: HTTP, FTP, SMP, DNS).
+- Presentation: mã hoá dữ liệu chuyển xuống hoặc hiển thị lên application, xử lý data khi gửi lên mạng (vd: SSL/TLS, JPEG, MPEG).
+- Session: quản lý kết nối giữa các app (vd: NetBIOS, RPC)
+- Transport: là những protocol nằm ở dưới cùng, tính từ application, hỗ trợ vận chuyển các gói data, thiết lập những protocol cao hơn (vd: TCP, UDP)
+- Network: load các gói data (vd: IP, routers).
+- Data link: hệ thống điều hướng những gói data đến IP thích hợp (MAC addresses, địa chỉ vật lý (vd: Ethernet, switches).
+- Physical: dây, phần cứng (vd: Ethernet cables).
+/2 máy tính kết nối với nhau/
+DNS (Domain name system)
+DNS: 
+Domain: tên miền, đặt tên IP, dùng để nhớ dẫn đến trang nào
+Mỗi máy tính đều có 1 IP. Khi chưa có Domain, phải gõ IP mới tìm kiếm được.
+Ví dụ:
+www.thpt-lehongphong-tphcm.edu.vn.
+Root
+Subdomain (không nhất thiết là www)
+Third level domain
+Top level domain
+Second level domain
+Cách DNS hoạt động:
+Browser → OS (no cache?) → DNS resolver (no cache?) → ISP (nhà mạng) (Internet Service Provider, no cache?) (kiếm thg giữ domain) → TLD (don’t no that domain but knows which ANS server has it) → asks Root server →  returns TLD: IP  → ISP takes TLD IP and asks that ANS (thg giữ domain) server → ANS server returns web IP → ISP returns IP to our DNS server → our DNS server returns to OS → OS returns to Browser → hiện lên cho người dùng.
+Tại sao TLD server dù không biết domain của mình là gì nhưng lại biết được ai là người nắm giữ?
+→ Đăng ký domain → TLD nhận được danh sách name server tương ứng với domain của mình để quản lý → TLD server biết được server nào giữ domain.
+
+HTTP (hypertext transfer protocol) 
+
+Kiểu dữ liệu HTTP gửi là text.
+Gửi dữ liệu qua TCP.
+Hoạt động của HTTP:
+/request - responserespond/
+/trả lời các thông tin được yêu cầu/
+/header: thông tin chính/
+/phần cuối: nhận biết được cần đọc đến đâu/ 
+Protocol: steps to start a conversation.
+Được xây dựng trên nền tảng của TCP và DNS.
+TCP (Transmission Control Protocol): dùng để kết nối máy tính và server. 
+HTTP nằm ở lớp Application
+TCP nằm ở lớp Transport
+
+HTTPS (hypertext transfer protocol secure) 
+
+Mã hóa request + response bằng TLS (transport layerlevel security) / SSL.
+Không thể đọc được request và response của máy tính và máy chủ. 
+Mọi công đoạn mã hóa và giải mã thực hiện nhờ Private key và Public key của máy chủ và thiết bị.
