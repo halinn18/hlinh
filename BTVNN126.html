@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTVN12/6</title>
+</head>
+<body>
+    <script>
+        function createProduct(product) {
+    
+    var productDiv = document.createElement('div');
+    productDiv.classList.add('product');
+
+    var image = document.createElement('img');
+    image.src = product.image;
+    image.alt = product.name;
+    productDiv.appendChild(image);
+
+    var name = document.createElement('h2');
+    name.textContent = product.name;
+    productDiv.appendChild(name);
+
+    var price = document.createElement('p');
+    price.textContent = "Giá: " + product.price + " đồng";
+    productDiv.appendChild(price);
+
+    if (product.discount > 0) {
+        var discount = document.createElement('p');
+        discount.textContent = "Giảm giá: " + product.discount + " đồng";
+        productDiv.appendChild(discount);
+    }
+
+    var shortDesc = document.createElement('p');
+    shortDesc.textContent = product.short_desc;
+    productDiv.appendChild(shortDesc);
+
+    var tag = document.createElement('p');
+    tag.textContent = "Tag: " + product.tag;
+    productDiv.appendChild(tag);
+
+    var unitPrice = document.createElement('p');
+    unitPrice.textContent = "Giá (đơn vị): " + product.unit_price;
+    productDiv.appendChild(unitPrice);
+
+    var productsContainer = document.getElementById('products-container');
+    productsContainer.appendChild(productDiv);
+}
+
+var sampleProduct = {
+    discount: 20000,
+    image: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4QBYRXhpZgAATU0AKgAAAAgAA4AAAARAAAAAAABAAEAAAQAAAABAAgAA... (dữ liệu ảnh base64)",
+    name: "Sản phẩm mẫu",
+    price: 500000,
+    short_desc: "Mô tả ngắn về sản phẩm mẫu",
+    tag: "Tag của sản phẩm mẫu",
+    unit_price: "Đơn vị sản phẩm mẫu"
+};
+
+createProduct(sampleProduct);
+</script>
+</body>
+</html>
